@@ -1,3 +1,6 @@
+# Full Fixed Code (Copy & Paste)
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +26,6 @@ body{
   overflow-x:hidden;
 }
 
-/* CURSOR GLOW */
 .cursor{
   position:fixed;
   width:25px;height:25px;
@@ -35,22 +37,22 @@ body{
   z-index:9999;
 }
 
-/* HEADER */
 header{
-  position:fixed;top:0;width:100%;
-  display:flex;justify-content:space-between;
+  position:fixed;
+  top:0;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
   align-items:center;
   padding:20px 60px;
   background:rgba(0,0,0,0.4);
   backdrop-filter:blur(20px);
   z-index:1000;
-  transition:0.4s;
 }
 
 header h2{
   letter-spacing:4px;
   font-weight:800;
-  margin:0;
 }
 
 .brand-gold{color:#d4af37;}
@@ -63,9 +65,9 @@ nav a{
   transition:0.3s;
   font-weight:500;
 }
+
 nav a:hover{color:#fff}
 
-/* HERO IMAGE */
 .hero{
   height:100vh;
   position:relative;
@@ -128,7 +130,10 @@ nav a:hover{color:#fff}
   text-decoration:none;
   transition:0.3s;
 }
-.btn:hover{transform:scale(1.08)}
+
+.btn:hover{
+  transform:scale(1.08)
+}
 
 .section{
   padding:120px 40px;
@@ -174,7 +179,6 @@ nav a:hover{color:#fff}
 .card h3{margin-bottom:10px}
 .card p{color:var(--muted);text-align:left}
 
-/* BLOG IMAGES */
 .post picture{
   width:100%;
   max-height:260px;
@@ -202,9 +206,6 @@ nav a:hover{color:#fff}
   transform:translateY(0);
 }
 
-/* =========================
-   FIXED PHONE (NO GLASS)
-========================= */
 .phone{
   width:280px;
   height:560px;
@@ -220,15 +221,8 @@ nav a:hover{color:#fff}
 .phone img{
   width:100%;
   height:100%;
-  object-fit:cover; /* IMPORTANT FIX */
+  object-fit:cover;
   display:block;
-  background:#000;
-}
-
-/* REMOVED GLASS EFFECT COMPLETELY */
-.phone::before,
-.phone::after{
-  display:none;
 }
 
 .map{
@@ -249,6 +243,7 @@ footer{
   transform:translateY(40px);
   transition:1s;
 }
+
 .fade.show{
   opacity:1;
   transform:translateY(0);
@@ -294,10 +289,12 @@ footer{
       <h3>🏋️ Premium Equipment</h3>
       <p>Modern machines and free weights designed for serious training.</p>
     </div>
+
     <div class="card">
       <h3>🔥 Expert Guidance</h3>
       <p>Coaching that keeps you consistent and progressing.</p>
     </div>
+
     <div class="card">
       <h3>💪 Strong Community</h3>
       <p>Surround yourself with people who push you higher.</p>
@@ -307,11 +304,12 @@ footer{
 
 <section class="section fade" id="blog">
   <h2>Fitness Mindset</h2>
+
   <div class="grid">
 
     <div class="card post">
       <picture>
-        <img src="img1.jpg">
+        <img src="img1.jpg" alt="Discipline">
       </picture>
       <h3>Discipline Beats Motivation</h3>
       <p class="quote">Consistency builds champions, not feelings.</p>
@@ -319,7 +317,7 @@ footer{
 
     <div class="card post">
       <picture>
-        <img src="img2.jpg">
+        <img src="img2.jpg" alt="No Excuses">
       </picture>
       <h3>No Excuses</h3>
       <p class="quote">Your goals require action, not hesitation.</p>
@@ -327,7 +325,7 @@ footer{
 
     <div class="card post">
       <picture>
-        <img src="img3.jpg">
+        <img src="img3.jpg" alt="Earn Every Rep">
       </picture>
       <h3>Earn Every Rep</h3>
       <p class="quote">Progress is built one set at a time.</p>
@@ -341,12 +339,20 @@ footer{
   <p>Evolve Fitness App helps you train smarter anywhere.</p>
 
   <div class="phone">
-    <img src="app-preview.jpg">
+    <img src="app-preview.jpg" alt="Evolve Fitness App Preview">
   </div>
 
   <div style="text-align:center">
     <p style="color:#aaa; font-size:14px;">Version 0.0.6 (Beta)</p>
-    <a href="Evolve app.apk" class="btn" download>Download App</a>
+
+    <a
+      href="evolve-app.apk"
+      class="btn"
+      download="evolve-app.apk"
+      type="application/vnd.android.package-archive"
+    >
+      Download App
+    </a>
   </div>
 </section>
 
@@ -355,15 +361,22 @@ footer{
   <p>3rd Floor Aurora Public Market, Sta. Rosa, Aurora, Isabela</p>
 
   <div class="map">
-    <iframe src="https://www.google.com/maps?q=Aurora%20Public%20Market%20Isabela&output=embed"
-    width="100%" height="100%" style="border:0"></iframe>
+    <iframe
+      src="https://www.google.com/maps?q=Aurora%20Public%20Market%20Isabela&output=embed"
+      width="100%"
+      height="100%"
+      style="border:0"
+    ></iframe>
   </div>
 </section>
 
-<footer>© 2026 Evolve Fitness • Built for transformation</footer>
+<footer>
+  © 2026 Evolve Fitness • Built for transformation
+</footer>
 
 <script>
 const cursor=document.querySelector('.cursor');
+
 document.addEventListener('mousemove',e=>{
   cursor.style.left=e.clientX+'px';
   cursor.style.top=e.clientY+'px';
@@ -374,6 +387,7 @@ const obs=new IntersectionObserver(entries=>{
     if(e.isIntersecting)e.target.classList.add('show')
   });
 });
+
 document.querySelectorAll('.fade').forEach(el=>obs.observe(el));
 
 const quoteObs=new IntersectionObserver(entries=>{
@@ -381,23 +395,24 @@ const quoteObs=new IntersectionObserver(entries=>{
     if(entry.isIntersecting) entry.target.classList.add('show');
   });
 });
+
 document.querySelectorAll('.quote').forEach(q=>quoteObs.observe(q));
 
-// SLOGAN SWITCH
 const slogans=["TRAIN","BUILD","DOMINATE"];
 let i=0;
 const sloganEl=document.getElementById("slogan");
 
 setInterval(()=>{
   sloganEl.style.opacity=0;
+
   setTimeout(()=>{
     i=(i+1)%slogans.length;
     sloganEl.textContent=slogans[i];
     sloganEl.style.opacity=1;
   },300);
+
 },2000);
 
-// PARTICLES
 const canvas=document.getElementById('particles');
 const ctx=canvas.getContext('2d');
 
@@ -405,10 +420,12 @@ function resize(){
   canvas.width=window.innerWidth;
   canvas.height=window.innerHeight;
 }
+
 resize();
 window.addEventListener('resize',resize);
 
 let particles=[];
+
 for(let i=0;i<60;i++){
   particles.push({
     x:Math.random()*canvas.width,
@@ -421,9 +438,11 @@ for(let i=0;i<60;i++){
 
 function animate(){
   ctx.clearRect(0,0,canvas.width,canvas.height);
+
   for(let p of particles){
     p.x+=p.dx;
     p.y+=p.dy;
+
     if(p.x<0||p.x>canvas.width)p.dx*=-1;
     if(p.y<0||p.y>canvas.height)p.dy*=-1;
 
@@ -432,10 +451,29 @@ function animate(){
     ctx.fillStyle="rgba(34,197,94,0.6)";
     ctx.fill();
   }
+
   requestAnimationFrame(animate);
 }
+
 animate();
 </script>
 
 </body>
 </html>
+```
+
+# IMPORTANT
+
+Rename your APK file to:
+
+```text
+evolve-app.apk
+```
+
+NOT:
+
+```text
+Evolve app.apk
+```
+
+And keep it in the SAME folder as index.html.
